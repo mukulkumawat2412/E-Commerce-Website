@@ -1,0 +1,53 @@
+body{
+  /* background: linear-gradient(to right, #df9292, #172023); */
+  background-image: url("../public/istockphoto-1367628991-1024x1024.jpg" );
+  /* #e5bfa8 */
+}
+
+
+#navbar{
+  background: linear-gradient(to right, #e5e2a8, #000000);
+  box-shadow: 3px 4px 5px rgb(128, 127, 127);
+
+}
+
+#navbar ul li a {
+  
+  color: white;
+}
+
+
+#Reg{
+  margin-top: 100px;
+}
+
+
+#login{
+  margin-top: 100px;
+  /* background: linear-gradient(to right, #0c0c0e, #f2f2f3); */
+  
+}
+
+.label1{
+  color: white;
+}
+
+
+#admin{
+  color: white;
+  margin-top: 20px;
+}
+
+
+.label2{
+  color: white;
+}
+
+#list1 ul li a{
+  color: black;
+}
+
+
+#myimg{
+  width: 100px;
+}
