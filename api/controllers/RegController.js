@@ -30,7 +30,7 @@ exports.Register = async(req,res)=>{
 
 
 
-        }else{
+        }else{ 
             res.json({
                 status:401,
                 // message:"userName is already exists"
