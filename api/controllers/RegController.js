@@ -8,6 +8,7 @@ exports.Register = async(req,res)=>{
     const {username,password,email} = req.body
     const checkpass = await bcrypt.hash(password,10)
     const userCheck = await  Reg.findOne({userName:username})
+
    
     try {
         if(userCheck==null){
@@ -24,6 +25,11 @@ exports.Register = async(req,res)=>{
             // message:"Successfully Register"
 
         })
+
+        // console.log(record)
+
+
+
         }else{
             res.json({
                 status:401,

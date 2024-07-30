@@ -20,7 +20,7 @@ const Storage = multer.diskStorage({
 })
 
 
-    let upload =    multer({
+    let upload =  multer({
         storage:Storage,
         limits:{
             fileSize:1024*1024*4
@@ -42,11 +42,14 @@ const Storage = multer.diskStorage({
 
 
 
- router.post("/register",Regc.Register)
- router.post("/Login", Regc.Login)
- router.post("/productInsertform",upload.single("pimg"),Proc.productInsertData)
+    router.post("/register",Regc.Register)
+    router.post("/Login", Regc.Login)
+    router.post("/productInsertform",upload.single("pimg"),Proc.productInsertData)
     router.get("/productData",Proc.adminproductData)
-    router.delete("/productDeleteData/:id",Proc.DeleteproductData) 
+    router.delete("/productDeleteData/:id",Proc.DeleteproductData)
+    router.get("/productupdateData/:productId",Proc.updateformdata) 
+    router.put("/updateproductData/:id",upload.single("pimage"),Proc.updateProductData)
+    router.get("/userproductData",Proc.usershowProduct)
 
 
 

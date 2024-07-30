@@ -4,16 +4,21 @@ import Navbar from "./Component/Navbar";
 import Regform from "./Component/Rejform";
 import Loginform from "./Component/Loginform";
 import { contextapi } from "./Contextapi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewNavbar from "./Component/NewNavbar";
 import Product from "./admin/Product";
 import Dashboard from "./admin/Dashboard";
 import Productform from "./admin/Productform";
 import { Toaster } from "react-hot-toast";
+import Updateform from "./admin/Updateform";
 
 
 function App() {
+  const [cart,setCart]=useState()
+  useEffect(()=>{
+    localStorage.setItem("cart",JSON.stringify(cart))
 
+  },[cart])
  const [loginname,setloginName] = useState(localStorage.getItem("loginName"))
 
 
@@ -26,7 +31,7 @@ function App() {
     
    
     <BrowserRouter>
-    <contextapi.Provider value={{loginname,setloginName}}>
+    <contextapi.Provider value={{loginname,setloginName, cart,setCart}}>
 
     
      <NewNavbar/>
@@ -37,6 +42,9 @@ function App() {
       <Route path="/product" element={<Product/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/productform" element={<Productform/>}/>
+      <Route path="/productupdate/:id" element={<Updateform/>}/>
+      
+      
       
       
 

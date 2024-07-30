@@ -8,7 +8,7 @@ const productSchema = mongoose.Schema({
     PDesc :{type:String },
     PAmount:{type:Number},
     PQty:{type:Number},
-    PStatus:{type:String},
+    PStatus:{type:String, default:"in-stock"},
     PImage:{type:String}
 
 })

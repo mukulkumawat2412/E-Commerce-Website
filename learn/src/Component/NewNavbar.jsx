@@ -16,6 +16,8 @@ import { Link } from 'react-router-dom';
 import {useNavigate} from "react-router-dom"
 import { useContext } from 'react';
 import { contextapi } from '../Contextapi';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Badge } from '@mui/material';
 
 const pages = ['Register', 'Pricing', 'Blog',];
 const settings = [{name:"Register",url:"/Register"},
@@ -31,6 +33,7 @@ function NewNavbar() {
 
   
  const {loginname,setloginName} = useContext(contextapi)
+ const {cart} = useContext(contextapi)
 
   const nevigate = useNavigate()
 
@@ -75,7 +78,9 @@ function NewNavbar() {
 
 
   return (
-    <AppBar position="static" color='primary'
+    <AppBar position="static"  sx={{
+      backgroundColor:"black"
+    }}
  
    >
       <Container maxWidth="xl">
@@ -188,18 +193,19 @@ function NewNavbar() {
             ))}
           </Box>
 
-          
-        
-
-           
-
-
-
-
-
-
-
             
+
+          <IconButton size='large' aria-label='show 4 new mails' color='inherit'>
+              <Badge badgeContent={cart && cart.totalItem} color='error'>
+              <ShoppingCartOutlinedIcon/>
+              </Badge>
+            </IconButton>
+
+
+
+
+          
+           
 
 
           <Typography variant='h6' sx={{marginRight:"10px"}}>
