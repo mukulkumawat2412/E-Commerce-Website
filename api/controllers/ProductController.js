@@ -2,9 +2,11 @@
 const productC = require("../models/Product")
 
 
+
 exports.productInsertData = (req,res)=>{
 
     const {pname,pdesc,pamount,pquantity,pstatus } = req.body
+    
 
     const filename = req.file.filename;
     try{
@@ -93,7 +95,7 @@ exports.DeleteproductData = async(req,res)=>{
 }catch(error){
   res.json({
     status:400,
-    message:""
+    
   })
 
 
@@ -104,6 +106,9 @@ exports.DeleteproductData = async(req,res)=>{
 
 exports.updateformdata = async(req,res)=>{
   const id = req.params.productId 
+  console.log(id)
+
+  //66b99b1e5dd971c2561c05de
 
 try{
  const record = await productC.findById(id)
@@ -131,7 +136,7 @@ exports.updateProductData = async(req,res)=>{
    
    const {pname,pdesc,pamount,pquantity,pstatus} = req.body
   //  console.log(req.file)
-
+ 
     const filename = req.file.filename
 
     
@@ -150,10 +155,10 @@ exports.updateProductData = async(req,res)=>{
    })
   }else{
 
-    await productC.findByIdAndUpdate(id,{
+    await productC.findByIdAndUpdate(id,{ 
 
       PName :pname,
-      PDesc :pdesc,
+      PDesc :pdesc,  
       PAmount:pamount,
       PQty:pquantity,
       PStatus:pstatus,
@@ -181,7 +186,7 @@ exports.updateProductData = async(req,res)=>{
     })
 
   }
- 
+  
 
 }
 

@@ -8,3 +8,4 @@ import { createContext } from "react";
 
 
 export const contextapi = createContext(null)
+console.log(contextapi)

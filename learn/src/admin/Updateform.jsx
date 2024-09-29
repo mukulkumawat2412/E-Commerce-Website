@@ -25,7 +25,7 @@ function Updateform() {
         }).then((data)=>{
             console.log(data)
             if(data.status==200){
-                setPName(data.apiData.PName)
+                setPName(data.apiData.PName) 
                 setPDesc(data.apiData.PDesc)
                 setPAmount(data.apiData.PAmount)
                 setPQuantity(data.apiData.PQty)
@@ -46,7 +46,7 @@ function Updateform() {
 
     let Data = new FormData()
 
-    Data.append("pname",pname)
+    Data.append("pname",pname) 
     Data.append("pdesc",pdesc)
     Data.append("pamount",pamount)
     Data.append("pquantity",pquantity)

@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { contextapi } from "../Contextapi";
-import toast from "react-hot-toast"
+import { toast, Toaster} from "sonner";
 import { Button } from "@mui/material";
+import {CircularProgress} from "@mui/material"
 
 
 
 
 function Loginform() {
+
+    
       
 
 
@@ -39,20 +42,22 @@ function Loginform() {
 
        }).then((data)=>{
         console.log(data)
+
         if(data.status===200){
            
 
             localStorage.setItem("loginName",data.apiData.userName)
             setloginName(localStorage.getItem("loginName"))
             if(data.apiData.userName==="admin"){
+                <CircularProgress style={{color:"orangered"}}/>
               toast.success("Successfully Admin Login...😍 ")
                 
-                nevigate("/dashboard")
+                //  nevigate("/dashboard")
 
       
             }else{
                 toast.success(`${username} Successfully Login😍...`)
-                nevigate("/product")
+                // nevigate("/product")
 
             }
 
@@ -72,6 +77,12 @@ function Loginform() {
 
     return ( 
         <>
+
+            
+
+
+
+        <Toaster position="top-center" duration={"1500"} richColors/>
         <div className="container" id="login">
 
 <div className="row">
@@ -86,14 +97,23 @@ function Loginform() {
     <label className="label1">Email</label>
     <input type="email"  className="form-control" value={email} onChange={(e)=>{setEmail(e.target.value)}} required/>
    <Button type="submit" color="success" variant="contained" className="form-control mt-3">Login</Button>
+   
    <Link to={"/Register"}><Button type="submit" color="error" variant="contained" className="form-control mt-3">Register</Button></Link>     
-
+       
 
     </form>
+ 
 
 
     </div>
     <div className="col-md-4"></div>
+    <h1>hjhjhjhjh</h1>
+    <h1>hjhjhjhjh</h1>
+    <h1>hjhjhjhjh</h1>
+    <h1>hjhjhjhjh</h1>
+    <h1>hjhjhjhjh</h1>
+    <h1>hjhjhjhjh</h1>
+    <h1>hjhjhjhjh</h1>
 </div>
 </div>
         

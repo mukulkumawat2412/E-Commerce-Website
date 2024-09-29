@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
+
 import { Button } from "@mui/material";
+import { contextapi } from "../Contextapi";
+import {toast, Toaster} from "sonner"
+
 
 function Regform() {
 
@@ -9,6 +12,12 @@ function Regform() {
     const [password,setPassword] = useState("")
     const [email,setEmail]       = useState("")
     const [message,setMessage]   = useState("")
+
+
+  const {myData} =   useContext(contextapi)
+  console.log(myData)
+
+ 
 
 
     function handleSubmit(e){
@@ -52,7 +61,9 @@ function Regform() {
 
     return ( 
         <>
-        
+        <Toaster position="top-center" duration={"1500"} richColors/>
+        {myData.userName}
+
         <div className="container" id="Reg">
        
         <div className="row">
@@ -79,7 +90,7 @@ function Regform() {
         </div>
         </div>
         
-        
+  
         </>
      );
 }

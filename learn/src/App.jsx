@@ -22,6 +22,14 @@ function App() {
  const [loginname,setloginName] = useState(localStorage.getItem("loginName"))
 
 
+  const myData = {
+    userName:"mukul",
+    age:"21"
+  }
+
+
+
+
   return (
     <>
   
@@ -31,7 +39,7 @@ function App() {
     
    
     <BrowserRouter>
-    <contextapi.Provider value={{loginname,setloginName, cart,setCart}}>
+    <contextapi.Provider value={{loginname,setloginName,myData, cart,setCart}}>
 
     
      <NewNavbar/>

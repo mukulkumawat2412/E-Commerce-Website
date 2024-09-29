@@ -26,7 +26,7 @@ function Product() {
 
 
    const {cart,setCart} = useContext(contextapi)
-
+ 
 
     function handleCart(e,valueid){
         // console.log(id)

@@ -12,8 +12,9 @@ function Dashboard() {
 
    const [product,setProduct] = useState([])
    const [message,setMessage] = useState("")
+   console.log(product)
 
-  const {loginname} =  useContext(contextapi)
+  const {loginname,fname} =  useContext(contextapi)
 
 
 
@@ -26,7 +27,7 @@ function Dashboard() {
         
            }).then((data)=>{
           
-            console.log(data)
+            // console.log(data)
             if(data.status===200){
                 setProduct(data.apiData)
                 if(!loginname){
@@ -102,6 +103,7 @@ function Dashboard() {
                                 <th>Product Status</th>
                                 <th>Product Delete</th>
                                 <th>Product Update</th>
+                                {fname}
                                 
                                
                             </tr>
@@ -114,6 +116,7 @@ function Dashboard() {
                 <tr className="border-2 ">
                     <td><img src={`upload/${item.PImage}`} alt="img" id="myimg"/></td>
                     <td>{item.PName}</td>
+                   
                     <td>{item.PDesc}</td>
                     <td>{item.PAmount}</td>
                     <td>{item.PQty}</td>

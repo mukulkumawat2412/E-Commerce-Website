@@ -15,7 +15,8 @@ exports.Register = async(req,res)=>{
         const record =  await new Reg({
             userName:username,
             Password:checkpass,
-            Email:email })
+            Email:email 
+        })
             
             record.save()
 
@@ -57,7 +58,7 @@ exports.Login = async(req,res)=>{
      const {username,password} = req.body
 
     const record = await Reg.findOne({userName:username})
-
+ 
     try{
     if(record !== null){
         const userpasscheck = await bcrypt.compare(password, record.Password )

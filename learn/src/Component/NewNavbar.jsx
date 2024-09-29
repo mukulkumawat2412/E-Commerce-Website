@@ -210,6 +210,9 @@ function NewNavbar() {
 
           <Typography variant='h6' sx={{marginRight:"10px"}}>
             {`Welcome ${loginname}`}
+
+                  
+         
             </Typography>
 
 
