@@ -114,6 +114,7 @@ function Loginform() {
     <h1>hjhjhjhjh</h1>
     <h1>hjhjhjhjh</h1>
     <h1>hjhjhjhjh</h1>
+    <p>lorem</p>
 </div>
 </div>
         
