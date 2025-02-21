@@ -11,11 +11,22 @@ app.get("*", (req,res) => {
     res.sendFile(path.resolve(_dirname, "learn", "dist", "index.html"));
 });
 
+app.use(express.static(path.join(__dirname, "learn/dist"))); 
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "learn/dist/index.html"));
+});
+
+
 const frontendRouter = require("./routes/frontend")
 
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://127.0.0.1:27017/merndb")
+mongoose.connect("mongodb://127.0.0.1:27017/merndb", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  
 
 
 app.use(cors())
