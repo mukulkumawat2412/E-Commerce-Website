@@ -92,7 +92,7 @@ function Dashboard() {
                     <div className="col-md-9">
                         <table className="table table-dark table-striped mt-3">
                             <thead>
-
+                            
                             
                             <tr>
                                 <th>Product Image</th>
