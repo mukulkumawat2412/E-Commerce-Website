@@ -2,8 +2,11 @@ const express = require("express")
 const app = express()
 const path = require("path")
 const cors = require("cors")
+const dotenv = require('dotenv')
 
 
+dbConnect()
+dotenv.config()
 
 const _dirname = path.resolve();
 
@@ -19,13 +22,11 @@ app.get("*", (req, res) => {
 
 
 const frontendRouter = require("./routes/frontend")
+const { default: dbConnect } = require("./db/dbConfig")
 
-const mongoose = require("mongoose")
 
-mongoose.connect(" mongodb://127.0.0.1:27017/mydatabase", {
-  
-  });
-  
+
+
 
 
 app.use(cors())
